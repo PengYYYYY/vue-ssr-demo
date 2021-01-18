@@ -5,11 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:ssr": "cross-env SSR=true vue-cli-service build && yarn ssr",
+    "ssr": "node src/server.js"
   },
   "dependencies": {
+    "@vue/server-renderer": "^3.0.2",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "vue": "^3.0.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^2.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
